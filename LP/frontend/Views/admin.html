@@ -1,0 +1,271 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="#"><img src="./assets/img/logoLP.png" alt="LP : List Présence" /></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#!/admin">Admin</a></li>
+                <li><a href="#!/teacher">Teachers</a></li>
+                <li><a href="#">workers</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" ng-bind="globals.currentUser.email"></a>
+                </li>
+                <li>
+                    <a href="#!/login">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid margin-top">
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-4 col-xs-12">
+            <div class="list-group">
+                <a href="" ng-click="vm.item = 0" ng-class="{active: vm.item==0}" class="list-group-item active">View All Statistics</a>
+                <a href="" ng-click="vm.item = 1" ng-class="{active: vm.item==1}" class="list-group-item">Absences of Teachers</a>
+                <a href="" ng-click="vm.item = 2" ng-class="{active: vm.item==2}" class="list-group-item">Absences of workers</a>
+                <a href="" ng-click="vm.item = 3" ng-class="{active: vm.item==3}" class="list-group-item">Enable / Disable Account</a>
+            </div>
+        </div>
+        <div class="col-md-8 col-xs-12">
+            <!--View All Statistics -->
+            <div class="tab" ng-show="vm.item==0">
+                <div class="lp-title">
+                    <h1>View All Statistics</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="widget-simple-chart text-right card-box">
+                            <div class="circliful-chart" data-icon="f1c0" data-percent="60" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
+                            <h3 class="text-success counter">{{vm.workers.length + vm.teachers.length + vm.students.length}}</h3>
+                            <p class="text-muted text-nowrap">Total Users</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget-simple-chart text-right card-box">
+                            <div class="circliful-chart" data-icon="f0c0" data-percent="25" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
+                            <h3 class="text-success counter">{{vm.workers.length}}</h3>
+                            <p class="text-muted text-nowrap">Total Workers</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget-simple-chart text-right card-box">
+                            <div class="circliful-chart" data-icon="f19d" data-percent="40" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
+                            <h3 class="text-success counter">{{vm.teachers.length}}</h3>
+                            <p class="text-muted text-nowrap">Total Teachers</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget-simple-chart text-right card-box">
+                            <div class="circliful-chart" data-icon="f0b1" data-percent="70" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
+                            <h3 class="text-success counter">{{vm.students.length}}</h3>
+                            <p class="text-muted text-nowrap">Total Students</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Charts -->
+                <div class="row card-box">
+                    <div id="container-chart"></div>
+                </div>
+
+
+                <div class="content-tab">
+                    <!--All Teachers -->
+                    <h2 class="lp-sous-title">All Teachers</h2>
+                    <table id="AllTeachers" class="display" cellspacing="0" width="100%"></table>
+                    <!-- All Workers -->
+                    <h2 class="lp-sous-title">All Workers</h2>
+                    <table id="AllWorkers" class="display" cellspacing="0" width="100%"></table>
+                </div>
+            </div>
+
+            <!-- Absences of Teachers -->
+            <div class="tab" ng-show="vm.item==1">
+                <div class="lp-title">
+                    <h1>Absences of Teachers</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+
+
+                <form class="form-inline form-datetime" ng-submit="vm.InsertListPresent(vm.lp, vm.datetimeT)">
+                    <div class="form-group">
+                        <input type='text' ng-model="vm.datetimeT" class="form-control" id='datetimeT' /> {{vm.datetimeT}}
+                    </div>
+                    <button type="submit" class="btn btn-default">Add</button>
+                </form>
+
+                <table id="ListPresence" class="table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>Present</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>Present</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="t in vm.teachers" ng-class="{success: vm.lp[$index].isPresent, danger: !vm.lp[$index].isPresent}">
+                            <td>{{t.id}}</td>
+                            <td>{{t.firstName}}</td>
+                            <td>{{t.surname}}</td>
+                            <td>{{t.email}}</td>
+                            <td>
+                                <button ng-click="vm.lp[$index].isPresent = !vm.lp[$index].isPresent" class="btn" ng-class="{'btn-success': !vm.lp[$index].isPresent, 'btn-danger':vm.lp[$index].isPresent}"><i ng-class="{'ion-checkmark-round': !vm.lp[$index].isPresent, 'ion-close-round':vm.lp[$index].isPresent}"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Absences of Workers -->
+            <div class="tab" ng-show="vm.item==2">
+                <div class="lp-title">
+                    <h1>Absences of Workers</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+
+                <form class="form-inline form-datetime" ng-submit="vm.InsertListPresent(vm.lpWorker, vm.datetimeW)">
+                    <div class="form-group">
+                        <input type='text' ng-model="vm.datetimeW" class="form-control" id='datetimeW' /> {{vm.datetimeW}}
+                    </div>
+                    <button type="submit" class="btn btn-default">Add</button>
+                </form>
+
+                <table id="ListPresenceW" class="table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>Present</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>Present</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="w in vm.workers" ng-class="{success: vm.lpWorker[$index].isPresent, danger: !vm.lpWorker[$index].isPresent}">
+                            <td>{{w.id}}</td>
+                            <td>{{w.firstName}}</td>
+                            <td>{{w.surname}}</td>
+                            <td>{{w.email}}</td>
+                            <td>
+                                <button ng-click="vm.lpWorker[$index].isPresent = !vm.lpWorker[$index].isPresent" class="btn" ng-class="{'btn-success': !vm.lpWorker[$index].isPresent, 'btn-danger':vm.lpWorker[$index].isPresent}"><i ng-class="{'ion-checkmark-round': !vm.lpWorker[$index].isPresent, 'ion-close-round':vm.lpWorker[$index].isPresent}"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Enable / Disable Account -->
+            <div class="tab" ng-show="vm.item==3">
+                <div class="lp-title">
+                    <h1>Enable / Disable Account</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+
+
+                <table id="dataEnable" class="table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>isActive</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>isActive</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="tt in vm.teachers" ng-class="{success: tt.isActive, danger: !tt.isActive}">
+                            <td>{{tt.id}}</td>
+                            <td>{{tt.firstName}}</td>
+                            <td>{{tt.surname}}</td>
+                            <td>{{tt.email}}</td>
+                            <td>
+                                {{tt.isActive}}
+                                <button ng-click="vm.EnableAccount(tt)" class="btn" ng-class="{'btn-success': !tt.isActive, 'btn-danger':tt.isActive}"><i ng-class="{'ion-checkmark-round': !tt.isActive, 'ion-close-round':tt.isActive}"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="signature">
+        <p>2017- ListPresence - LP - Lakhdhar Fathi 1MIM2</p>
+    </div>
+</footer>

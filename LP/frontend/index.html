@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/dataTables.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="./assets/plugins/jquery-plugin-circliful/css/jquery.circliful.css">
+
+
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body ng-app="app-lp">
+    <!--Your HTML content here-->
+
+    <div class="content">
+        <div class="flash" ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error'}" ng-if="flash">
+            {{flash.message}}
+            <button type="button" class="close" ng-click=""><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div ng-view></div>
+    </div>
+
+
+
+    <!-- Angular.js Libraries -->
+    <script src="./assets/js/jquery-2.1.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/angular.min.js"></script>
+    <script src="./assets/js/angular-route.min.js"></script>
+    <script src="./assets/js/angular-cookies.min.js"></script>
+    <script src="./assets/js/dataTables.min.js"></script>
+    <script src="./assets/js/moment.min.js"></script>
+    <script src="./assets/js/moment-with-locales.min.js"></script>
+    <script src="./assets/js/bootstrap-datetimepicker.js"></script>
+    <script src="./assets/plugins/jquery-plugin-circliful/js/jquery.circliful.js"></script>
+
+    <script src="./assets/js/highcharts.js"></script>
+    <script src="./assets/js/highcharts-more.js"></script>
+    <script src="./assets/js/exporting.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="app.js"></script>
+    <script src="services/authentication.service.js"></script>
+    <script src="services/flash.service.js"></script>
+    <script src="services/user.service.js"></script>
+    <script src="services/class.service.js"></script>
+
+    <script src="controllers/home.controller.js"></script>
+    <script src="controllers/login.controller.js"></script>
+    <script src="controllers/register.controller.js"></script>
+    <script src="controllers/admin.controller.js"></script>
+    <script src="controllers/teacher.controller.js"></script>
+
+
+</body>
+
+</html>

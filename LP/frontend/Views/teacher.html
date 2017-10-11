@@ -1,0 +1,197 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="#"><img src="./assets/img/logoLP.png" alt="LP : List Présence" /></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="#!/admin">Admin</a></li>
+                <li class="active"><a href="#!/teacher">Teachers</a></li>
+                <li><a href="#">workers</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" ng-bind="globals.currentUser.email"></a>
+                </li>
+                <li>
+                    <a href="#!/login">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid margin-top">
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-4 col-xs-12">
+            <div class="list-group">
+                <a href="" ng-click="vm.item = 0" ng-class="{active: vm.item==0}" class="list-group-item active">Statistics</a>
+                <a href="" ng-click="vm.item = 1" ng-class="{active: vm.item==1}" class="list-group-item">Manage Class</a>
+                <a href="" ng-click="vm.item = 2" ng-class="{active: vm.item==2}" class="list-group-item">Absences of Students</a>
+            </div>
+        </div>
+        <div class="col-md-8 col-xs-12">
+            <!--Manage Students -->
+            <div class="tab" ng-show="vm.item==0">
+                <div class="lp-title">
+                    <h1>Statistics</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+
+
+                <!-- Charts -->
+                <div class="row card-box">
+                    <div id="container-chart"></div>
+                </div>
+
+                <div class="row card-box">
+                    <div class="col-lg-6">
+                        <div class="content-tab">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Manage Class -->
+            <div class="tab" ng-show="vm.item==1">
+                <div class="lp-title">
+                    <h1>Manage Class</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+
+
+                <form class="form-inline form-datetime" ng-submit="vm.addClass()">
+                    <div class="form-group">
+                        <label for="newClass">New Class</label>
+                        <input type='text' ng-model="vm.newClass" placeholder="name" class="form-control" id='newClass' /> {{vm.newClass}}
+                    </div>
+                    <button type="submit" class="btn btn-default">Add</button>
+                </form>
+
+                <table id="" class="table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#Id</th>
+                            <th>Class</th>
+                            <th>Archive</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#Id</th>
+                            <th>Class</th>
+                            <th>Archive</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="c in vm.class" ng-class="{'success': !c.archive, 'danger': c.archive}">
+                            <td>{{c.id}}</td>
+                            <td>{{c.name}}</td>
+                            <td>
+                                {{c.archive}}
+                                <button ng-click="vm.archive(c)" class="btn" ng-class="{'btn-success': c.archive, 'btn-danger': !c.archive}"><i ng-class="{'ion-checkmark-round': c.archive, 'ion-close-round': !c.archive}"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Absences of Students -->
+            <div class="tab" ng-show="vm.item==2">
+                <div class="lp-title">
+                    <h1>Absences of Students</h1>
+                </div>
+                <p>Dictas principes pri ea. Ex vim soluta accusam, per in illum liberavisse. Eum viderer saperet adversarium id, erat mazim te est. Adhuc hendrerit disputando duo eu, sed fugit corrumpit efficiantur ex. Eum etiam iudico gubergren eu.</p>
+
+                <form class="form-inline form-datetime" ng-submit="vm.InsertListPresentStudents()">
+                    <select ng-change="vm.updateListP()" ng-model="vm.select" class="form-control">
+                        <option  ng-repeat="cl in vm.class" ng-value="cl.id">{{ cl.name }}</option>
+                    </select>
+                    <div class="form-group">
+                        <input type='text' ng-model="vm.datetimeS" class="form-control" id='datetimeS' />
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Add</button>
+                </form>
+
+                <table id="ListStudent" class="table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>Present</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#Id</th>
+                            <th>firstname</th>
+                            <th>surname</th>
+                            <th>email</th>
+                            <th>Present</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="s in vm.students | filter:{ id_class: vm.select }" ng-class="{success: vm.lps[$index].isPresent, danger: !vm.lps[$index].isPresent}">
+                            <td>{{s.id}}</td>
+                            <td>{{s.firstName}}</td>
+                            <td>{{s.surname}}</td>
+                            <td>{{s.email}}</td>
+                            <td>
+                                {{vm.lps[$index].isPresent}}
+                                <button ng-click="vm.lps[$index].isPresent = !vm.lps[$index].isPresent" class="btn" ng-class="{'btn-success': !vm.lps[$index].isPresent, 'btn-danger':vm.lps[$index].isPresent}"><i ng-class="{'ion-checkmark-round': !vm.lps[$index].isPresent, 'ion-close-round':vm.lps[$index].isPresent}"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="signature">
+        <p>2017- ListPresence - LP - Lakhdhar Fathi 1MIM2</p>
+    </div>
+</footer>

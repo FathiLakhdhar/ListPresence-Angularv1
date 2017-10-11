@@ -1,0 +1,50 @@
+<div class="bg_login">
+
+
+    <form name="form" class="form_register" ng-submit="vm.register()" role="form">
+        <!---->
+        <div class="align-center">
+            <img src="assets/img/logoLP.png" alt="" style="max-width:150px;" />
+            <h1>List Présence</h1>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+            <input type="text" ng-model="vm.firstname" class="form-control" name="firstname" placeholder="firstname" required/>
+            <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">firstname is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.surname.$dirty && form.surname.$error.required }">
+            <input type="text" ng-model="vm.surname" class="form-control" name="surname" placeholder="surname" required/>
+            <span ng-show="form.surname.$dirty && form.surname.$error.required" class="help-block">surname is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <input type="email" ng-model="vm.email" class="form-control" name="email" placeholder="Email" required/>
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <input type="password" ng-model="vm.password" class="form-control" name="password" placeholder="Password" required/>
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.age.$dirty && form.age.$error.required }">
+            <input type="number" ng-model="vm.age" class="form-control" name="age" placeholder="Age" required/>
+            <span ng-show="form.age.$dirty && form.age.$error.required" class="help-block">Age is required</span>
+        </div>
+
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="vm.gender" value="male" checked="checked">Male
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="vm.gender" value="female">Female
+            </label>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-lg btn-block">Register</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+            />
+        </div>
+    </form>
+
+
+</div>

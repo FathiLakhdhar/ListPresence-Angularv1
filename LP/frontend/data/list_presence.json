@@ -1,0 +1,145 @@
+[{
+        "_id": "590fbbb813e765d5cbdec716",
+        "index": 0,
+        "date": "2015-09-14T06:40:38 -01:00",
+        "classroom": "590fbbb89a7b99e3e1aecba4",
+        "teacher": "590fbbb85c9c33c79e8c4b29",
+        "list": [{
+                "_idStudent": "590fbbb885fc3892fb835e2f",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8b0f38505074500d9",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8cfbf53cb732fc0c9",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8bcf42a274dd5f54b",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8e4156d8ac66d9b50",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8b2218bf22583ed5d",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8e13c51c606a8ecbc",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8019a5dcaff51ad0b",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8948cbd0ba7d72d61",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb88277d1625c99f7ce",
+                "isPresent": false
+            }
+        ]
+    },
+    {
+        "_id": "590fbbb83003689955b66007",
+        "index": 1,
+        "date": "2017-01-16T03:42:38 -01:00",
+        "classroom": "590fbbb85a20d0faf0c0b27d",
+        "teacher": "590fbbb875ac500c9e65096b",
+        "list": [{
+                "_idStudent": "590fbbb8016dc562ea463cbc",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8c923859f674e5f57",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb84134336cb9183c4b",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb85dca70238620724e",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8f9e9038e74299b58",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8852b10e46226c5a2",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb814a692ca111a18ac",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8d149da6c1db0aac6",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb882419a37c2abb0e2",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8d3ac91bb2a2acf78",
+                "isPresent": false
+            }
+        ]
+    },
+    {
+        "_id": "590fbbb80c0ac1bc0a288e7d",
+        "index": 2,
+        "date": "2016-11-26T04:05:49 -01:00",
+        "classroom": "590fbbb8d4b931a301d169dd",
+        "teacher": "590fbbb8a566c3f43fe22fd1",
+        "list": [{
+                "_idStudent": "590fbbb80b7eec0e8d227ebf",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb85ffd89fda14b8c33",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8cef6758dde6c4dea",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb8b092e7c92be130a6",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb80d9452e2a6fd3895",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8e1c255641a35345e",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb86de463a271b3717f",
+                "isPresent": false
+            },
+            {
+                "_idStudent": "590fbbb819ef7d81378503a9",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb8d467bc4b64442724",
+                "isPresent": true
+            },
+            {
+                "_idStudent": "590fbbb861755367eff1efcf",
+                "isPresent": true
+            }
+        ]
+    }
+]
