@@ -4,12 +4,12 @@
 
 ## Login
 ![login page](https://github.com/FathiLakhdhar/ListPresence-Angularv1/blob/master/capture/login.png)
-##SignUp
+## SignUp
 ![signup page](https://github.com/FathiLakhdhar/ListPresence-Angularv1/blob/master/capture/signup.png)
 ## home
 ![home page](https://github.com/FathiLakhdhar/ListPresence-Angularv1/blob/master/capture/homepage.png)
 ## Admin : Statistics 
-![Admin Statistics](https://github.com/FathiLakhdhar/ListPresence-Angularv1/blob/master/capture/admin_statistics.png)
+![Admin Statistics](https://github.com/FathiLakhdhar/ListPresence-Angularv1/blob/master/capture/admin_statestics.png)
 ## Admin : Absences of Teachers 
 ![Admin Absences of Teachers](https://github.com/FathiLakhdhar/ListPresence-Angularv1/blob/master/capture/absencesteachers.png)
 ## Admin : Absences of Workers
